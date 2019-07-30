@@ -41,7 +41,7 @@ namespace Ockham.Data
             bool force = false,
             char? closeDelimiter = null)
         {
-
+            throw null;
         }
 
         public static string[] ParseIdentifier(
@@ -51,6 +51,7 @@ namespace Ockham.Data
             char? closeDelimiter = null)
         {
 
+            throw null;
         }
 
         public static Func<string, string> GetQuoteIdentifierDelegate(this DbConnection connection)

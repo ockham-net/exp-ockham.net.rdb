@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Ockham.Data
 {
+    /// <summary>
+    /// Extensions to <see cref="DbCommand"/>
+    /// </summary>
     public static class DbCommandExtensions
     {
         /// <summary>

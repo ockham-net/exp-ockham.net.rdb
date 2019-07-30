@@ -7,11 +7,19 @@ using System.Reflection;
 
 namespace Ockham.Data.Common
 {
+#if HAS_DBPROVIDERFACTORIES
     /// <summary>
     /// Augmentation of <see cref="System.Data.Common.DbProviderFactories"/>. Guarantees case-insensitive matching (as in original .NET
     /// Framework implementation). Also provides utilities to normalize a providerInvariantName (namespace), or throw an exception 
     /// if a requested factory cannot be found.
     /// </summary>
+#else
+    /// <summary>
+    /// Replacement for System.Data.Common.DbProviderFactories (not included in netstandard). Guarantees case-insensitive matching (as in original .NET
+    /// Framework implementation). Also provides utilities to normalize a providerInvariantName (namespace), or throw an exception 
+    /// if a requested factory cannot be found.
+    /// </summary>
+#endif
     public static class DbProviderFactories
     {
         /// <summary>

@@ -1,16 +1,12 @@
-﻿using Ockham.Data.Extensions;
-using Ockham.Reflection;
-using System;
+﻿using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace Ockham.Data.SqlClient
 {
-    [ExtensionClass(ProviderExtensions.ExtensionUris.Scheme)]
     public static class SqlParameterExtensions
     {
 
-        [ExtensionMethod(ProviderExtensions.ExtensionUris.Scheme, typeof(Delegates.FillTable), "System.Data.SqlClient")]
         public static void CopyTo(this SqlParameter source, SqlParameter target)
         {
             DbParameterExtensions.CopyCommonProps(source, target);
@@ -32,7 +28,6 @@ namespace Ockham.Data.SqlClient
             target.SqlValue = source.SqlValue ?? DBNull.Value;
         }
 
-        [ExtensionMethod(ProviderExtensions.ExtensionUris.Scheme, "System.Data.SqlClient")]
         internal static DbParameter AddNullable(DbParameterCollection parameters, string parameterName, object parameterValue)
             => AddNullable(parameters as SqlParameterCollection, parameterName, parameterValue);
 

@@ -6,6 +6,9 @@ using System.Data.Common;
 
 namespace Ockham.Data
 {
+    /// <summary>
+    /// Utility for copying data from one <see cref="DataTable"/> to another
+    /// </summary>
     public static class DataTableCopier
     {
         /// <summary>
@@ -33,16 +36,27 @@ namespace Ockham.Data
             comparer = comparer ?? StringComparer.OrdinalIgnoreCase;
             var table1Cols = new Dictionary<string, int>(comparer);
             var table2Cols = new Dictionary<string, int>(comparer);
+
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Copy all rows from <paramref name="source"/> to <paramref name="target"/>, using
+        /// the provided map of target column name to source column name
+        /// </summary>
         public static void CopyTo(DataTable source, DataTable target, Dictionary<string, string> nameMap)
         {
-
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Create a new <see cref="DataTable"/> from an open <see cref="DbDataReader"/>
+        /// </summary>
+        /// <param name="reader">The open <see cref="DbDataReader"/> to read from</param>
+        /// <param name="firstRowOnly">Whether to read only the first row</param>
         public static DataTable FromDataReader(DbDataReader reader, bool firstRowOnly)
         {
-            throw null;
+            throw new NotImplementedException();
         }
     }
 }

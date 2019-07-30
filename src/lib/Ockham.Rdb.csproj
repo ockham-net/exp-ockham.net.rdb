@@ -36,10 +36,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ockham.NET.Extend" Version="1.0.0-rc3-debug" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Internal\" />
   </ItemGroup>
  

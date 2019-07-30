@@ -1,19 +1,14 @@
-﻿using Ockham.Data.Extensions;
-using Ockham.Reflection;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-[assembly: ExtensionAssembly(ProviderExtensions.ExtensionUris.Scheme)]
 
 namespace Ockham.Data.SqlClient
 {
-    [ExtensionClass(ProviderExtensions.ExtensionUris.Scheme)]
     public static class SqlConnectionExtensions
     {
-        [ExtensionMethod(ProviderExtensions.ExtensionUris.Scheme, typeof(Delegates.FillTable), "System.Data.SqlClient")]
         internal static int FillTable(DbConnection connection, DataTable source, string targetName, bool byName, IDictionary<string, string> nameMap)
             => FillTable(connection as SqlConnection, source, targetName, byName, nameMap);
 
@@ -49,7 +44,6 @@ namespace Ockham.Data.SqlClient
             return lRowsAffected;
         }
 
-        [ExtensionMethod(ProviderExtensions.ExtensionUris.Scheme, "System.Data.SqlClient")]
         internal static int ExecuteProcedure(DbConnection connection, string procedureName, object parameters = null)
             => ExecuteProcedure(connection as SqlConnection, procedureName, parameters);
 

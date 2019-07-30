@@ -10,9 +10,18 @@ namespace Ockham.Data
 {
     public static partial class DbConnectionExtensions
     {
+        /// <summary>
+        /// Upload the contents of a <see cref="DataTable"/> to a table on the target database server
+        /// </summary>
+        /// <param name="connection">An open connection to the target database</param>
+        /// <param name="source">The <see cref="DataTable"/> to upload</param>
+        /// <param name="targetName">The name of the remote table</param>
+        /// <param name="byName">Whether to map columns by name</param>
+        /// <param name="nameMap">An explicit mapping of target column name to source column name. Implies <paramref name="byName"/> is true</param>
+        /// <returns>The number of rows uploaded</returns>
         public static int FillTable(this DbConnection connection, DataTable source, string targetName = null, bool byName = false, IDictionary<string, string> nameMap = null)
         {
-            if (ProviderExtensions.TryGetExtension(connection, out FillTable fillTable))
+            if (ProviderExtensions.FillTable.TryGetDelegate(connection, out FillTable fillTable))
             {
                 return fillTable(connection, source, targetName, byName, nameMap);
             }
@@ -20,6 +29,9 @@ namespace Ockham.Data
             return GenericFillTable(connection, source, targetName, byName, nameMap);
         }
 
+        /// <summary>
+        /// A generic implementation that works with any <see cref="DbConnection"/>
+        /// </summary>
         private static int GenericFillTable(this DbConnection connection, DataTable source, string targetName, bool byName, IDictionary<string, string> nameMap)
         {
             string lTargetTable = string.IsNullOrEmpty(targetName) ? source.TableName : targetName;

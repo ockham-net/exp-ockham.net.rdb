@@ -8,6 +8,9 @@ using static Ockham.Data.Extensions.Delegates;
 
 namespace Ockham.Data
 {
+    /// <summary>
+    /// Extensions to <see cref="DbParameterCollection"/>
+    /// </summary>
     public static class DbParameterExtensions
     {
         /// <summary>
@@ -39,7 +42,7 @@ namespace Ockham.Data
             Type tParamCollection = parameters.GetType();
             string @namespace = tParamCollection.Namespace;
 
-            if (ProviderExtensions.TryGetExtension(@namespace, out AddNullableParameter addNullable))
+            if (ProviderExtensions.AddNullableParameter.TryGetDelegate(@namespace, out AddNullableParameter addNullable))
             {
                 return addNullable(parameters, parameterName, parameterValue);
             }
@@ -64,7 +67,7 @@ namespace Ockham.Data
 
             if (sourceNamespace == targetNamespace)
             {
-                if (ProviderExtensions.TryGetExtension(sourceNamespace, out CopyParameter copyParameter))
+                if (ProviderExtensions.CopyParameter.TryGetDelegate(sourceNamespace, out CopyParameter copyParameter))
                 {
                     copyParameter(source, target);
                 }
