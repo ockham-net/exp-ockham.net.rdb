@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
+
+    <IsPackable>false</IsPackable>
+
+    <RootNamespace>Ockham.Data.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.17" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\lib\Ockham.Rdb.csproj" />
+    <ProjectReference Include="..\..\src\Ockham.Rdb.SqlClient\Ockham.Rdb.SqlClient.csproj" />
+  </ItemGroup>
+
+</Project>

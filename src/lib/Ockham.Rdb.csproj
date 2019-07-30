@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472;netcoreapp2.2</TargetFrameworks>
+    <NoWarn>1701;1702;1705</NoWarn>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageId>Ockham.NET.Rbd</PackageId>
+    <Title>Ockham.NET Relational Database Extensions</Title>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Description>Practical extensions on top of ADO.NET</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ockham-net/exp-ockham.net.rdb</PackageProjectUrl>
+    <PackageTags>ADO.NET</PackageTags>
+    
+    <RepositoryUrl>https://github.com/ockham-net/exp-ockham.net.rdb.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\build\assembly\Properties.csproj" />
+
+  <PropertyGroup Condition="('$(FrameworkType)' == 'netframework') OR ('$(FrameworkType)' == 'netcoreapp')">
+    <DefineConstants>HAS_DBPROVIDERFACTORIES</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>Ockham.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ockham.NET.Extend" Version="1.0.0-rc3-debug" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Internal\" />
+  </ItemGroup>
+ 
+</Project>

@@ -1,0 +1,62 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{CF4689B5-9705-46C9-914C-367DFBB7D5DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{FAA6A455-703C-48A0-8591-DC3F78D3478D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3BA21431-6935-4F57-8E63-0379E4C0A0AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D36C1965-4FF9-4E77-8892-4B07CFB0A14B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ockham.Rdb", "api\lib\Ockham.Rdb.csproj", "{88216B3A-3A54-4050-B8B5-82FA143171A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ockham.Rdb", "src\lib\Ockham.Rdb.csproj", "{A9ED2E23-77E7-485C-BECE-F50DD57F36C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ockham.Rdb.Tests", "tests\lib\Ockham.Rdb.Tests.csproj", "{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "build", "build\build.shproj", "{C9EEE568-9891-4643-9D4D-4F67005D74A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ockham.Rdb.SqlClient", "src\Ockham.Rdb.SqlClient\Ockham.Rdb.SqlClient.csproj", "{B5041AD7-F97B-4497-87C4-6B51CC9EC359}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		build\Build.projitems*{c9eee568-9891-4643-9d4d-4f67005d74a4}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88216B3A-3A54-4050-B8B5-82FA143171A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88216B3A-3A54-4050-B8B5-82FA143171A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88216B3A-3A54-4050-B8B5-82FA143171A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88216B3A-3A54-4050-B8B5-82FA143171A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9ED2E23-77E7-485C-BECE-F50DD57F36C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9ED2E23-77E7-485C-BECE-F50DD57F36C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9ED2E23-77E7-485C-BECE-F50DD57F36C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9ED2E23-77E7-485C-BECE-F50DD57F36C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5041AD7-F97B-4497-87C4-6B51CC9EC359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5041AD7-F97B-4497-87C4-6B51CC9EC359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5041AD7-F97B-4497-87C4-6B51CC9EC359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5041AD7-F97B-4497-87C4-6B51CC9EC359}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88216B3A-3A54-4050-B8B5-82FA143171A6} = {FAA6A455-703C-48A0-8591-DC3F78D3478D}
+		{A9ED2E23-77E7-485C-BECE-F50DD57F36C6} = {3BA21431-6935-4F57-8E63-0379E4C0A0AC}
+		{4DB20A7B-6336-43F6-8D22-7ED6BC34A6F7} = {D36C1965-4FF9-4E77-8892-4B07CFB0A14B}
+		{C9EEE568-9891-4643-9D4D-4F67005D74A4} = {CF4689B5-9705-46C9-914C-367DFBB7D5DC}
+		{B5041AD7-F97B-4497-87C4-6B51CC9EC359} = {3BA21431-6935-4F57-8E63-0379E4C0A0AC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1A17FD9-C958-45F4-9F0C-80225EF48000}
+	EndGlobalSection
+EndGlobal
